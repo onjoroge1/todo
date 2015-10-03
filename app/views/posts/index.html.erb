@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="todolist not-done">
+             <h1>Todos</h1>
+              <%= render 'form' %>
+            </div>
+          </div>
+
+  <div class="col-md-6">
+    <% @posts.each do |post| %>
+      <ul>
+        <li><h1><%= post.title %><h1></li>
+        <%= link_to 'Show', post, class: "btn btn-default" %></li>
+        <%= link_to 'Edit', edit_post_path(post), class: "btn btn-primary" %>
+        <%= link_to 'X', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></li>
+      </ul>
+    <% end %>
+  </div>
+
+ <div class="todo-footer">
+                    <strong><span class="count-todos"></span></strong> Items Left
+                </div>
+            </div>
+        </div>
+   
+
+
